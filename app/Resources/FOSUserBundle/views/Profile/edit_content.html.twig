@@ -1,0 +1,75 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="container">
+    <div class="row">
+        <form class="formulaire" action="{{ path('fos_user_profile_edit') }}" method ="post">
+            {#{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}#}
+            <h2 class="heading"> {{ 'Edit profile' | trans }} </h2>
+            <div class="custom-input">
+                {{  'Username' | trans }}
+                {#{{form_widget(form) }}#}
+                {{ form_widget(form.username) }}
+                {{ form_errors(form.username) }}
+            </div>
+            <div class="custom-input">
+                {{  'Email' | trans }}
+                {#{{form_widget(form) }}#}
+                {{ form_widget(form.email) }}
+                {{ form_errors(form.email) }}
+            </div>
+            <div class="custom-input">
+                {#{{form_widget(form) }}#}
+                {{  'Password' | trans }}
+                {{ form_widget(form.current_password) }}
+                {{ form_errors(form.current_password) }}
+            </div>
+
+        <div>
+            <input class="custom-button" type="submit" value="{{ 'submit'|trans }}" />
+        </div>
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </form>
+    </div>
+</div>
+
+
+{% block stylesheets %}
+    <style>
+        .formulaire {
+            font-size: large;
+            border: 1px solid gainsboro;
+            padding: 45px 50px;
+            border-radius: 10px;
+            margin: 0 auto;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 255, .2);
+        }
+
+        .custom-input{
+            margin: 15px 0;
+        }
+        .custom-input input, .custom-input input:focus{
+            display: block;
+            background-color: white !important;
+            border-radius: 5px;
+            padding: 5px 15px;
+            border: 1px solid gainsboro;
+            font-size: 18px;
+        }
+
+        .custom-button {
+            border-radius: 5px;
+            border: none !important;
+            padding: 5px 20px ;
+            box-shadow: none !important;
+            background: dodgerblue;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit !important;
+            cursor: pointer;
+            transition: 0.3s;
+            vertical-align: top;
+        }
+    </style>
+
+{% endblock %}

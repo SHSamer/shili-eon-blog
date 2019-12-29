@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for success_message in app.session.flashBag.get('success') %}
+                {{ success_message | trans }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if app.session.flashBag.has('error') %}
+        <div class="alert alert-danger">
+            {% for error_message in app.session.flashBag.get('error') %}
+                {{ error_message | trans }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+<div class="p-3 mb-2" >
+    <div class="container text-center">
+        {{ form_start(search_form) }}
+        <div class="row">
+            <div class="container text-center card text-white bg-warning mb-3"style="max-width: 18rem;">
+                
+                <div class="card-body ">
+                    <h2 class="card-title">{{ 'message.search_post' | trans }}</h2>
+                    <div class="input-field">
+                        {{ form_widget(search_form.title) }}
+                    </div>
+
+                    <div class="card-footer">
+                        {{ form_widget(search_form.search) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(search_form) }}
+    </div>
+</div>
+    <hr>
+
+    {% for post in posts %}
+        <div class="container">
+            <div class="card mb-4">
+                {% if post is defined and post.getImageUrl() != null %}
+                    <img class="card-img-top" height="350" alt=" NOT FOUND : {{ post.getImageUrl() }}" src="/image/{{ post.getImageUrl() }}" />
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.getTitle() }}</h2>
+                    <p class="card-text article-text">{{ post.getContent() | slice(0, 20) }} ...</p>
+                    <a class="btn btn-primary" href="post/{{ post.getId() }}">Details</a>
+                </div>
+                <div class="card-footer text-muted">
+                    {{ 'post.publication.on' |trans }} {{ post.getPublished()|localizeddate('long', 'none', 'en') }} {{ 'post.publication.by' |trans }} {{ post.getAuthor() }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <hr>
+
+    <div class="clearfix">
+        <a class="btn btn-primary float-right" href="{{ path('homepage', {'page' :  page + 1} ) }} ">{{ 'home.older' | trans }}</a>
+    </div>
+
+    <hr>
+    <div class="text-center bg-dark text-white p-3 mb-2">
+    <h1 >{{ 'home.creation' | trans }}
+        <h6 class=" text-danger">{{ 'home.warning' | trans }}</h6></h1>
+        </div>
+
+    {% form_theme create_form 'form/field.html.twig' %}
+
+    {% block form_row %}
+        {% spaceless %}
+            <div class="container">
+                <div class="form_row">
+                    {{ form(create_form) }}
+                </div>
+            </div>
+        {% endspaceless %}
+    {% endblock form_row %}
+
+    <hr>
+
+{% endblock %}

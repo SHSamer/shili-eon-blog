@@ -1,0 +1,54 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="container">
+    <div class="custom-info">
+         <div>
+            <p>{{ 'Username' | trans }} : <b style="color: royalblue" >{{ user.username }}</b> </p>
+            <p>{{ 'Email address' | trans }} : <b style="color: royalblue" > {{ user.email }}</b></p>
+        </div>
+        <div class="nav-item" style="margin-top: 25px;">
+            <a style="" class="custom-button" href="/profile/edit">
+                {{ 'Edit profile' | trans}}
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+{% block stylesheets %}
+    <style>
+
+     .custom-info {
+         font-size: large;
+         border: 1px solid gainsboro;
+         padding: 45px 50px;
+         border-radius: 10px;
+         margin: 0 auto;
+         box-shadow: 1px 1px 10px 1px rgba(0, 0, 255, .2);
+     }
+
+    .custom-button {
+    border-radius: 5px;
+    border: none !important;
+    padding: 5px 20px ;
+    box-shadow: none !important;
+    background: dodgerblue;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: inherit !important;
+    cursor: pointer;
+    transition: 0.3s;
+    vertical-align: top;
+    text-align: right;
+        text-decoration: none;
+    }
+
+    .custom-button:hover, .custom-button:focus {
+    background: royalblue;
+        color: white;
+        text-decoration: none;
+    }
+
+    </style>
+{% endblock %}

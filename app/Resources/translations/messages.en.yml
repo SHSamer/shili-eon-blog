@@ -1,0 +1,56 @@
+Back: 'Back'
+
+menu:
+  register: 'Register'
+  profile: 'Profile'
+  home: 'Home'
+  about: 'About'
+  login: 'Login'
+  logout: 'Logout'
+
+user:
+  Username: 'username'
+  Email address: 'email address'
+  edit:
+    profil: 'edit profile'
+
+post:
+  created: 'Post created'
+  deleted: 'Post deleted'
+  modified: 'Post modified'
+  details:
+    delete: 'Delete'
+    edit: 'Edit'
+  publication:
+    on: 'Posted on'
+    by: 'by'
+  modification:
+    title: 'Title'
+    content: 'Content'
+
+error:
+  title: 'Title already used'
+  delete: 'Impossible to delete post'
+  unauthorized:
+    modification: 'Unauthorized modification'
+    suppression: 'Unauthorized suppression'
+    creation: 'Unauthorized creation, please authentificate'
+
+message:
+  hello: 'Logged in as'
+  search_post: 'Search a post'
+
+home:
+  creation: 'Post your article'
+  older: 'Next page'
+  warning: "You must be logged in to perform this action"
+
+about:
+  text : 'This project is developed as part of the teaching unit HMIN302-E-application'
+
+form:
+  title : 'Title'
+  content : 'Content'
+  image : 'Image'
+  create : 'Create'
+  search : 'Search'

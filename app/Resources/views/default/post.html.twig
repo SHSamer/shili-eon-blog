@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Blog:post{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="custom-post col-lg">
+                <h1>
+                    {{post.title}}
+                </h1>
+                <hr>
+                <p>
+                    {{ post.content }}
+                </p>
+                <span>
+                    {{ 'post.publication.on'|trans }} {{ post.getPublished()|localizeddate('long', 'none', 'en') }} {{ 'post.publication.by'|trans }} {{ post.getAuthor() }}
+                </span>
+
+                <div class="card-footer">
+                    {% if user is same as (post.author) %}
+                        <a href="/post/edit/{{ post.getId() }}" class="custom-button btn btn-warning float-right mx-1">{{ 'post.details.edit'| trans }}</a>
+
+                        <a href="/post/delete/{{ post.getId() }}" class="custom-button btn btn-danger float-right mx-1 ">{{ 'post.details.delete'| trans }}</a>
+                    {%  endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

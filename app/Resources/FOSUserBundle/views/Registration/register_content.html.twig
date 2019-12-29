@@ -1,0 +1,114 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="container">
+    <div class="row">
+        <form class="formulaire" action="{{ path('fos_user_registration_register')  }}" method = "post">
+            {#{{ form_start(form, {'method': 'post', 'attr': {'class': 'fos_user_registration_register'}}) }}#}
+                <h2 class="heading"> {{ 'Register' |trans }} </h2>
+                <div class="custom-input">
+                    {{ form_label(form.username) }}
+                    {#<label for="Username"> {{  'Username' |trans }}</label>#}
+                    {{ form_widget(form.username) }}
+                    {{ form_errors(form.username) }}
+                </div>
+                <div class="custom-input">
+                    {{ form_label(form.email) }}
+                    {#<label for="Username"> {{  'email address' |trans }}</label>#}
+                    {{ form_widget(form.email) }}
+                    {{ form_errors(form.email) }}
+                </div>
+
+                <div class="custom-input">
+                    {{ form_label(form.plainPassword.first) }}
+                    {#<label for="Username"> {{  'Password' |trans }}</label>#}
+                    {{ form_widget(form.plainPassword.first) }}
+                    {{ form_errors(form.plainPassword.first) }}
+                </div>
+                <div class="custom-input">
+                    {{ form_label(form.plainPassword.second) }}
+                    {#<label for="Username"> {{  'Confirm password' |trans }}</label>#}
+                    {{ form_widget(form.plainPassword.second) }}
+                </div>
+                <div class="row" style="margin-top: 25px">
+                    <div class="col-lg custom-link" style="padding-right: 0;">
+                        <a href="/login">{{ 'log in' |trans}}</a>
+                    </div>
+                    {{ form_rest(form) }}
+                    <div class="col-lg" style="text-align: right;">
+                        <input class="custom-button" type="submit" value="{{ 'submit'|trans }}" />
+                    </div>
+                </div>
+
+
+        </form>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% block stylesheets %}
+<style>
+
+    .heading {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 500;
+    }
+    .formulaire {
+        font-size: large;
+        border: 1px solid gainsboro;
+        padding: 45px 50px;
+        border-radius: 10px;
+        margin: 0 auto;
+        box-shadow: 1px 1px 10px 1px rgba(0, 0, 255, .2);
+    }
+
+    .custom-input{
+        margin: 15px 0;
+    }
+    .custom-input label{
+        display: block;
+        margin: 0;
+        font-size: 14px;
+    }
+    .custom-input input, .custom-input input:focus{
+        display: block;
+        background-color: white !important;
+        border-radius: 5px;
+        padding: 5px 15px;
+        border: 1px solid gainsboro;
+        font-size: 18px;
+    }
+
+    .custom-link a{
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .custom-button {
+    border-radius: 5px;
+    border: none !important;
+    padding: 5px 20px ;
+    box-shadow: none !important;
+    background: dodgerblue;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit !important;
+    cursor: pointer;
+    transition: 0.3s;
+    vertical-align: top;
+    }
+
+
+
+    .custom-button:hover, .custom-button:focus {
+    background: royalblue;
+    }
+</style>
+
+{% endblock %}
+
+
+
+

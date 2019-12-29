@@ -1,0 +1,56 @@
+Back: 'Retour'
+
+menu:
+  register: 'Inscription'
+  profile: 'Mon profil'
+  home: 'Accueil'
+  about: 'A propos de nous'
+  login: 'Connexion'
+  logout: 'Deconnexion'
+
+user:
+  Username: 'Nom d''utilisateur'
+  Email address: 'Addresse e-mail'
+  edit:
+    profil: 'Editer le profil'
+
+post:
+  created: 'Création de l''article avec succès'
+  deleted: 'Suppression de l''article avec succès'
+  modified: 'Modification du post avec succès'
+  details:
+    delete: 'Supprimer'
+    edit: 'Editer'
+  publication:
+    on: 'Posté le'
+    by: 'par'
+  modification:
+    title: 'Titre'
+    content: 'Contenu'
+
+error:
+  title: 'Titre déjà utilisé'
+  delete: 'Impossible de supprimer l''article'
+  unauthorized:
+    modification: 'Modification non autorisé'
+    suppression: 'Suppression non autorisé'
+    creation: 'Création non autorisé, veuillez vous connectez'
+
+message:
+  hello: 'Connecté en tant que'
+  search_post: 'Rechercher dans le site'
+
+home:
+  creation: 'Poster votre article'
+  older: 'La page suivante'
+  warning: 'Vous devez être connecter pour effectuer cette action'
+
+about:
+  text : 'Ce projet est développé dans le cadre de l''unité d''enseignement HMIN302-E-application'
+
+form:
+  title: 'Titre'
+  content: 'Contenu'
+  image: 'Image'
+  create: 'Créer'
+  search: 'Rechercher'
