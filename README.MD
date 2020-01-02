@@ -8,6 +8,6 @@ password: test
 # Deux modes 
 
 ```
-Mode non conncecté : consulter les articles seulement
-Mode connecté : consulter, ajouter, modiifer (ses propores articles) et supprimer (ses propores articles) 
+Mode non connecté : consulter les articles seulement
+Mode connecté : consulter, ajouter, modifier (ses propres articles) et supprimer (ses propres articles)
 ```
