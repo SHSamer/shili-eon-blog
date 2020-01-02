@@ -1,9 +1,5 @@
 # BLOG SOURCE CODE
-# Binôme 
-```
-SHILI Samer 
-EON Yoann
-```
+
 
 # Utilisateur démo
 ```
@@ -15,4 +11,9 @@ password: test
 ```
 Mode non connecté : consulter les articles seulement
 Mode connecté : consulter, ajouter, modifier (ses propres articles) et supprimer (ses propres articles)
+```
+# Binôme 
+```
+SHILI Samer 
+EON Yoann
 ```
