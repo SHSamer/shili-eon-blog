@@ -1,5 +1,8 @@
 # BLOG SOURCE CODE
 
+# SonarQube Link 
+
+https://sonarcloud.io/dashboard?id=SHSamer_shili-eon-blog
 
 # Utilisateur démo
 ```
